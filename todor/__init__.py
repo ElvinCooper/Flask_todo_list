@@ -21,8 +21,4 @@ def create_app():
     def index():
         return render_template('index.html') 
     
-    @app.route('/registrar')
-    def registrar():
-        return render_template('registrar.html')
-
     return app
