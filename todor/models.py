@@ -17,9 +17,9 @@ class User(db.Model):
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    created_by = db.Column(db.Integer, db.ForeingKey('user.id'), nullable=False)
+    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     title = db.Column(db.String(100), nullable=False)
-    desc = db.Column(db.text)
+    desc = db.Column(db.Text)
     status = db.Column(db.Boolean, default = False)
 
     def __init__(self, created_by, title, desc, status = False):
